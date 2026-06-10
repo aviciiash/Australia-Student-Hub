@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>在澳学习</title>
+	<meta name="description" content="在澳学习：澳洲教育体系、VCE 与 ATAR、学习方法与学术写作、AI 学习工具、大学与 TAFE 路径。" />
+	<style>
+		:root {
+			--navy: #003366;
+			--navy-2: #0057B8;
+			--ink: #13213c;
+			--muted: #5f6b7a;
+			--border: #d9dee7;
+			--bg: #FFFFFF;
+			--bg-alt: #F5F7FA;
+			--success: #EAF7EE;
+			--warn: #FFF4E5;
+			--focus: #ffbf47;
+			--card: #ffffff;
+			--shadow: 0 8px 24px rgba(0, 51, 102, 0.12);
+			--shadow-sm: 0 4px 14px rgba(0, 51, 102, 0.10);
+			--radius: 14px;
+			--radius-sm: 10px;
+			--radius-lg: 16px;
+			--max: 1200px;
+			--font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans SC", "Noto Sans", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Helvetica, sans-serif;
+		}
+
+		* { box-sizing: border-box; }
+		html, body { height: 100%; }
+		html { scroll-behavior: smooth; }
+		body { margin: 0; font-family: var(--font); color: var(--ink); background: var(--bg-alt); line-height: 1.45; }
+		a { color: var(--navy-2); text-decoration: none; }
+		a:hover { text-decoration: underline; }
+		a:focus-visible, button:focus-visible {
+			outline: 3px solid var(--focus);
+			outline-offset: 2px;
+			border-radius: 6px;
+		}
+
+		.container { max-width: var(--max); margin: 0 auto; padding: 0 18px; }
+
+		header { background: var(--navy); color: #fff; }
+		.topbar { display: flex; align-items: center; gap: 16px; padding: 14px 0; }
+		.brand { display: flex; align-items: center; gap: 12px; min-width: 260px; }
+		.coa { width: 34px; height: 34px; border-radius: 6px; background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.06)); display: grid; place-items: center; border: 1px solid rgba(255,255,255,0.18); }
+		.brand h1 { font-size: 16px; margin: 0; letter-spacing: 0.2px; }
+		.brand .subtitle { font-size: 12px; color: rgba(255,255,255,0.78); margin: 0; }
+
+		nav.primary { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+		.navwrap { flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 10px; }
+		.nav-link { display: inline-flex; align-items: center; gap: 6px; color: #fff; padding: 10px 10px; border-radius: 10px; font-weight: 700; white-space: nowrap; }
+		.nav-link:hover { background: rgba(255,255,255,0.08); text-decoration: none; }
+
+		.section { padding: 24px 0; }
+		.breadcrumbs { padding: 14px 0 6px; color: var(--muted); font-size: 13px; }
+		.breadcrumbs a { color: var(--muted); }
+
+		.page { padding: 10px 0 24px; }
+		.page h2 { margin: 8px 0 8px; font-size: 26px; }
+		.page .lede { margin: 0 0 14px; color: var(--muted); }
+
+		.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+		.callout { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 14px; box-shadow: var(--shadow-sm); }
+		.callout h3 { margin: 0 0 6px; font-size: 16px; }
+		.callout p { margin: 0; color: var(--muted); }
+		.callout ul { margin: 0; padding-left: 18px; color: var(--muted); }
+		.callout li { margin: 6px 0; }
+
+		.card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px; box-shadow: 0 1px 0 rgba(11,31,58,0.04); }
+
+		.btn {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			border: 1px solid var(--border);
+			background: #fff;
+			padding: 10px 12px;
+			border-radius: 12px;
+			font-weight: 800;
+			cursor: pointer;
+			color: var(--ink);
+		}
+		.btn:hover { box-shadow: var(--shadow); text-decoration: none; }
+
+		h3.section-h { margin: 18px 0 10px; font-size: 18px; }
+		.anchor { scroll-margin-top: 18px; }
+
+		footer { border-top: 1px solid rgba(255,255,255,0.12); background: var(--navy); color: rgba(255,255,255,0.86); padding: 26px 0; }
+		footer h4 { margin: 0 0 6px; font-size: 14px; color: #fff; }
+		footer p { margin: 0; font-size: 13px; color: rgba(255,255,255,0.72); }
+
+		@media (max-width: 900px) {
+			.grid-2 { grid-template-columns: 1fr; }
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<div class="topbar">
+				<div class="brand" aria-label="站点标识">
+					<div class="coa" aria-hidden="true">AU</div>
+					<div>
+						<h1>澳大利亚学生服务中心</h1>
+						<p class="subtitle">面向学生的权威风格指南与服务信息</p>
+					</div>
+				</div>
+				<div class="navwrap">
+					<nav class="primary" aria-label="主导航">
+						<a class="nav-link" href="index.html">首页</a>
+						<a class="nav-link" href="study.html" aria-current="page">学习</a>
+						<a class="nav-link" href="index.html#/living">生活</a>
+						<a class="nav-link" href="index.html#/work">工作</a>
+						<a class="nav-link" href="index.html#/finance">财务</a>
+						<a class="nav-link" href="index.html#/government">政府服务</a>
+						<a class="nav-link" href="index.html#/technology">科技工具</a>
+						<a class="nav-link" href="index.html#/resources">资源库</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<section class="section">
+			<div class="container">
+				<div class="breadcrumbs"> <a href="index.html">首页</a> &nbsp;›&nbsp; <span>学习</span></div>
+				<a class="btn" href="index.html" aria-label="返回首页">← 返回首页</a>
+
+				<div class="page">
+					<h2>在澳学习</h2>
+					<p class="lede">本页面汇总澳洲教育体系、升学路径与学习方法，采用清晰分段结构与重点提示框，便于快速查找。</p>
+
+					<div class="callout" style="background: var(--bg-alt);">
+						<h3 style="margin: 0 0 6px;">重点提示框</h3>
+						<ul>
+							<li>英语能力与学术写作同等关键（达标不等于学得轻松）。</li>
+							<li>保持出勤率与正常就读状态，避免影响签证要求。</li>
+							<li>升学路径不止一条：大学、TAFE、转学分等都是常见选择。</li>
+						</ul>
+					</div>
+
+					<h3 id="edu-system" class="section-h anchor">澳洲教育体系（Australian Education System）</h3>
+					<div class="callout">
+						<p style="margin: 0 0 10px; color: var(--muted);"><strong>澳洲教育体系快速指南</strong><br>如果你来自中国，第一次接触澳洲教育体系，最容易搞混的通常是：Prep 是什么？Year 12 相当于国内几年级？VCE 是什么？TAFE 是不是大专？澳洲大学如何录取？<br>本指南帮助中国留学生和家长快速了解澳洲教育体系。</p>
+						<ul>
+							<li>Prep 是什么？</li>
+							<li>Year 12 相当于国内几年级？</li>
+							<li>VCE 是什么？</li>
+							<li>TAFE 是不是大专？</li>
+							<li>澳洲大学如何录取？</li>
+						</ul>
+					</div>
+
+					<h3 class="section-h">学校阶段划分</h3>
+					<div class="grid-2">
+						<div class="callout">
+							<h3>学前教育</h3>
+							<p>Kindergarten / Preschool<br>适合 3–5 岁儿童。</p>
+						</div>
+						<div class="callout">
+							<h3>小学（Primary School）</h3>
+							<p>Prep（预备班）<br>Year 1<br>Year 2<br>Year 3<br>Year 4<br>Year 5<br>Year 6<br>年龄约 5–12 岁。<br>Prep 类似正式小学前的适应阶段。</p>
+						</div>
+						<div class="callout">
+							<h3>中学（Secondary School）· 初中阶段</h3>
+							<p>Year 7–10<br>对应国内初中至高中前期。</p>
+						</div>
+						<div class="callout">
+							<h3>中学（Secondary School）· 高中阶段</h3>
+							<p>Year 11–12<br>对应澳洲大学升学准备阶段。</p>
+						</div>
+					</div>
+
+					<h3 class="section-h">澳洲学校类型</h3>
+					<div class="grid-2">
+						<div class="callout">
+							<h3>公立学校（Public School）</h3>
+							<ul>
+								<li>政府资助</li>
+								<li>学费较低</li>
+								<li>按学区招生</li>
+							</ul>
+						</div>
+						<div class="callout">
+							<h3>教会学校（Catholic School）</h3>
+							<ul>
+								<li>中等学费</li>
+								<li>包含宗教课程</li>
+								<li>学术水平普遍较好</li>
+							</ul>
+						</div>
+						<div class="callout">
+							<h3>私立学校（Independent School）</h3>
+							<ul>
+								<li>学费较高</li>
+								<li>班级规模较小</li>
+								<li>设施和资源较丰富</li>
+							</ul>
+						</div>
+						<div class="callout">
+							<h3>什么是 VCE？</h3>
+							<p>如果在维多利亚州（墨尔本）读高中，毕业后获得：<br><strong>VCE</strong><br>Victorian Certificate of Education（维州高中毕业证书）。<br>完成 Year 11 和 Year 12 后取得。</p>
+						</div>
+					</div>
+
+					<h3 class="section-h">什么是 ATAR？</h3>
+					<div class="callout">
+						<p>ATAR（Australian Tertiary Admission Rank）是澳洲大学录取排名系统。<br>范围：0.00 - 99.95<br>例如：ATAR 95 代表你的成绩超过 95% 的同龄毕业生。<br><strong>注意：</strong>ATAR 是排名，不是考试百分制成绩。</p>
+					</div>
+
+					<h3 class="section-h">两条主要升学路径</h3>
+					<div class="grid-2">
+						<div class="callout">
+							<h3>路线一：大学升学</h3>
+							<p>Year 12<br>↓<br>本科（Bachelor Degree）<br>↓<br>硕士（Master Degree）<br>适合学术方向发展。</p>
+						</div>
+						<div class="callout">
+							<h3>路线二：TAFE 职业教育</h3>
+							<p>TAFE<br>↓<br>Certificate / Diploma<br>↓<br>就业或转入大学<br>适合技术和职业技能发展。<br><strong>说明：</strong>TAFE 不等于国内职高，许多课程可以转学分进入大学。</p>
+						</div>
+					</div>
+
+					<h3 class="section-h">澳洲学校如何评分</h3>
+					<div class="callout">
+						<p style="margin: 0 0 8px;">澳洲教育强调持续评估，而不仅仅是期末考试。最终成绩通常由多个部分共同决定。</p>
+						<ul>
+							<li>Essay（论文）</li>
+							<li>Presentation（演讲）</li>
+							<li>Group Project（小组项目）</li>
+							<li>Research Report（研究报告）</li>
+							<li>Exam（考试）</li>
+						</ul>
+					</div>
+
+					<h3 class="section-h">国际学生必须了解</h3>
+					<div class="grid-2">
+						<div class="callout">
+							<h3>英语能力非常重要</h3>
+							<p>达到入学要求并不代表能够轻松完成学业。学术写作、课堂讨论和研究能力同样重要。</p>
+						</div>
+						<div class="callout">
+							<h3>保持出勤率</h3>
+							<p>国际学生需要保持正常就读状态。长期缺课可能影响签证要求。</p>
+						</div>
+						<div class="callout">
+							<h3>学会自主学习</h3>
+							<p style="margin: 0 0 8px;">澳洲教育更加注重：</p>
+							<ul>
+								<li>独立思考</li>
+								<li>时间管理</li>
+								<li>主动提问</li>
+								<li>自主研究</li>
+							</ul>
+						</div>
+						<div class="callout">
+							<h3>中国学生常见误区</h3>
+							<ul>
+								<li><strong>误区一：</strong>ATAR 决定人生。<br>实际情况：澳洲拥有多种升学路径。</li>
+								<li><strong>误区二：</strong>TAFE 等于差学校。<br>实际情况：许多技术职业收入和就业率都非常优秀。</li>
+								<li><strong>误区三：</strong>学校排名最重要。<br>实际情况：英语能力、学习习惯和实践经验往往更重要。</li>
+							</ul>
+						</div>
+					</div>
+
+					<h3 id="vce-atar" class="section-h anchor">VCE 与 ATAR</h3>
+					<div class="callout">
+						<p>理解 VCE（Victorian Certificate of Education，维州高中毕业证书）与 ATAR（Australian Tertiary Admission Rank，大学录取排名 0.00–99.95）。注意：ATAR 是排名，不是百分制分数。</p>
+					</div>
+
+					<h3 id="academic" class="section-h anchor">学习方法与学术写作</h3>
+					<div class="callout">
+						<p>澳洲教育强调持续评估与学术规范：论文（Essay）、演讲（Presentation）、小组项目（Group Project）、研究报告（Research Report）与考试（Exam）等。建议重点提升阅读、写作、课堂讨论与时间管理能力。</p>
+					</div>
+
+					<h3 id="ai-tools" class="section-h anchor">AI 学习工具</h3>
+					<div class="callout">
+						<p>AI 可用于头脑风暴、制定学习计划、语言润色与复习总结；务必遵守课程与学校政策，核对事实并规范引用来源。</p>
+					</div>
+
+					<h3 id="pathways" class="section-h anchor">大学与 TAFE 路径</h3>
+					<div class="callout">
+						<p>两条主要升学路线：Year 12 → 本科/硕士（学术）与 TAFE → 证书/文凭 → 就业或转学分进入大学（职业技能）。</p>
+					</div>
+
+					<div style="height: 10px;"></div>
+					<div class="grid-2">
+						<div class="card">
+							<strong>快速跳转</strong>
+							<ul style="margin: 10px 0 0; padding-left: 18px; color: var(--muted);">
+								<li><a href="#edu-system">澳洲教育体系</a></li>
+								<li><a href="#vce-atar">VCE 与 ATAR</a></li>
+								<li><a href="#academic">学习方法与学术写作</a></li>
+								<li><a href="#ai-tools">AI 学习工具</a></li>
+								<li><a href="#pathways">大学与 TAFE 路径</a></li>
+							</ul>
+						</div>
+						<div class="card">
+							<strong>说明</strong>
+							<p style="margin: 10px 0 0; color: var(--muted);">本页面为信息型结构示例，可按城市/州或学生阶段进一步扩展为多个子页面。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<div class="container">
+			<h4>Australia Student Hub</h4>
+			<p>帮助中国留学生解决学习、生活、就业与未来发展问题。</p>
+			<p style="margin-top: 10px; color: rgba(255,255,255,0.72); font-size: 12.5px;">Information for educational purposes only.</p>
+		</div>
+	</footer>
+</body>
+</html>
+		.notice { border-radius: var(--radius-lg); padding: 14px; border: 1px solid var(--border); }
+		.notice.info { background: rgba(0, 87, 184, 0.10); border-color: rgba(0, 87, 184, 0.22); }
+		.notice.success { background: var(--success); border-color: rgba(38, 144, 75, 0.22); }
+		.notice.warn { background: var(--warn); border-color: rgba(255, 167, 38, 0.30); }

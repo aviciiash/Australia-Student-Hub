@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>如何减少留学开支？</title>
+	<meta name="description" content="帮助中国留学生和家长了解最有效、最现实的省钱方式，优先关注能节省数千澳元的大额支出项目。" />
+	<style>
+		:root {
+			--navy: #003366;
+			--navy-2: #0057B8;
+			--ink: #13213c;
+			--muted: #5f6b7a;
+			--border: #d9dee7;
+			--bg: #FFFFFF;
+			--bg-alt: #F5F7FA;
+			--success: #EAF7EE;
+			--warn: #FFF4E5;
+			--focus: #ffbf47;
+			--card: #ffffff;
+			--shadow: 0 8px 24px rgba(0, 51, 102, 0.12);
+			--shadow-sm: 0 4px 14px rgba(0, 51, 102, 0.10);
+			--radius: 14px;
+			--radius-sm: 10px;
+			--radius-lg: 16px;
+			--max: 1200px;
+			--font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans SC", "Noto Sans", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Helvetica, sans-serif;
+		}
+
+		* { box-sizing: border-box; }
+		html, body { height: 100%; }
+		html { scroll-behavior: smooth; }
+		body { margin: 0; font-family: var(--font); color: var(--ink); background: var(--bg-alt); line-height: 1.45; }
+		a { color: var(--navy-2); text-decoration: none; }
+		a:hover { text-decoration: underline; }
+		a:focus-visible, button:focus-visible {
+			outline: 3px solid var(--focus);
+			outline-offset: 2px;
+			border-radius: 6px;
+		}
+
+		.container { max-width: var(--max); margin: 0 auto; padding: 0 18px; }
+
+		header { background: var(--navy); color: #fff; }
+		.topbar { display: flex; align-items: center; gap: 16px; padding: 14px 0; }
+		.brand { display: flex; align-items: center; gap: 12px; min-width: 260px; }
+		.coa { width: 34px; height: 34px; border-radius: 6px; background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.06)); display: grid; place-items: center; border: 1px solid rgba(255,255,255,0.18); }
+		.brand h1 { font-size: 16px; margin: 0; letter-spacing: 0.2px; }
+		.brand .subtitle { font-size: 12px; color: rgba(255,255,255,0.78); margin: 0; }
+
+		nav.primary { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+		.navwrap { flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 10px; }
+		.nav-link { display: inline-flex; align-items: center; gap: 6px; color: #fff; padding: 10px 10px; border-radius: 10px; font-weight: 700; white-space: nowrap; }
+		.nav-link:hover { background: rgba(255,255,255,0.08); text-decoration: none; }
+
+		.section { padding: 24px 0; }
+		.breadcrumbs { padding: 14px 0 6px; color: var(--muted); font-size: 13px; }
+		.breadcrumbs a { color: var(--muted); }
+
+		.page { padding: 10px 0 24px; }
+		.page h2 { margin: 8px 0 8px; font-size: 26px; }
+		.page .lede { margin: 0 0 14px; color: var(--muted); }
+
+		.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+		.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+
+		.callout { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 14px; box-shadow: var(--shadow-sm); }
+		.callout h3 { margin: 0 0 6px; font-size: 16px; }
+		.callout p { margin: 0; color: var(--muted); }
+		.callout ul { margin: 0; padding-left: 18px; color: var(--muted); }
+		.callout li { margin: 6px 0; }
+
+		.btn {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			border: 1px solid var(--border);
+			background: #fff;
+			padding: 10px 12px;
+			border-radius: 12px;
+			font-weight: 800;
+			cursor: pointer;
+			color: var(--ink);
+		}
+		.btn:hover { box-shadow: var(--shadow); text-decoration: none; }
+
+		.big-number {
+			background: var(--bg-alt);
+			border: 1px solid var(--border);
+			border-radius: var(--radius-lg);
+			padding: 12px;
+		}
+		.big-number .k { font-size: 12px; font-weight: 900; color: var(--navy); letter-spacing: 0.06em; text-transform: uppercase; }
+		.big-number .v { font-size: 22px; font-weight: 900; margin-top: 2px; color: var(--navy-2); }
+		.big-number .s { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+		.warn { background: var(--warn); border-color: rgba(255, 167, 38, 0.30); }
+
+		@media (max-width: 980px) {
+			.grid-3 { grid-template-columns: 1fr; }
+			.grid-2 { grid-template-columns: 1fr; }
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<div class="topbar">
+				<div class="brand" aria-label="站点标识">
+					<div class="coa" aria-hidden="true">AU</div>
+					<div>
+						<h1>澳大利亚学生服务中心</h1>
+						<p class="subtitle">面向学生的权威风格指南与服务信息</p>
+					</div>
+				</div>
+				<div class="navwrap">
+					<nav class="primary" aria-label="主导航">
+						<a class="nav-link" href="index.html">首页</a>
+						<a class="nav-link" href="study.html">在澳学习</a>
+						<a class="nav-link" href="index.html#/living/accommodation">住宿与租房</a>
+						<a class="nav-link" href="index.html#/finance/banking">银行与财务</a>
+						<a class="nav-link" href="index.html#/work">工作与就业</a>
+						<a class="nav-link" href="index.html#/government">移民与PR</a>
+						<a class="nav-link" href="index.html#/living">生活指南</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<section class="section">
+			<div class="container">
+				<div class="breadcrumbs"><a href="index.html">首页</a> &nbsp;›&nbsp; <span>热门问题</span> &nbsp;›&nbsp; <span>如何减少留学开支？</span></div>
+				<a class="btn" href="index.html" aria-label="返回首页">← 返回首页</a>
+
+				<div class="page">
+					<h2>💰 如何减少留学开支？</h2>
+					<p class="lede">目标：帮助中国留学生和家长了解<strong>最有效、最现实</strong>的省钱方式。避免空洞建议，优先关注能节省<strong>数千澳元</strong>的大额支出项目。阅读时间约 2–3 分钟。</p>
+
+					<div class="callout">
+						<h3>为什么有人一年不到 4 万澳元，有人超过 8 万澳元？</h3>
+						<p style="margin:0;">对于大多数留学生来说，真正影响预算的主要是：</p>
+						<ul style="margin-top: 8px;">
+							<li>🏠 住宿</li>
+							<li>🎓 学费</li>
+							<li>🛒 日常消费习惯</li>
+						</ul>
+						<p style="margin-top: 8px; color: var(--muted);">而不是奶茶或零食等小额支出。</p>
+					</div>
+
+					<h3 style="margin: 18px 0 10px;">第一优先：把钱省在“大头”上</h3>
+					<div class="grid-3" aria-label="省钱三大抓手">
+						<div class="callout">
+							<h3>🏠 住宿（最大支出）</h3>
+							<p style="margin: 0 0 8px;">房租通常占总生活成本的 <strong>40%–60%</strong>。</p>
+							<div class="big-number">
+								<div class="k">大学生：选择合租</div>
+								<div class="v">每年可省 AUD $8,000–15,000+</div>
+								<div class="s">独立 Studio：AUD $450–700+/周<br>合租单间：AUD $220–350/周</div>
+							</div>
+						</div>
+						<div class="callout">
+							<h3>🎓 学费（差距巨大）</h3>
+							<p style="margin: 0 0 8px;">同一专业，不同学校学费可能相差：</p>
+							<div class="big-number">
+								<div class="k">潜在差价</div>
+								<div class="v">AUD $10,000–20,000+ / 年</div>
+								<div class="s">建议综合考虑学费、房租成本、地理位置、就业资源，而不是只看排名。</div>
+							</div>
+						</div>
+						<div class="callout">
+							<h3>🛒 消费习惯（决定“越住越贵”还是“越住越稳”）</h3>
+							<ul>
+								<li>先把固定支出（房租/学费）算清楚，再定“可自由花的钱”</li>
+								<li>搬家/买家具尽量二手，避免一次性大额支出</li>
+								<li>订阅类服务先看是否有学生价（常见可省 50%）</li>
+							</ul>
+						</div>
+					</div>
+
+					<h3 style="margin: 18px 0 10px;">🏠 住宿：省钱的“第一杠杆”</h3>
+					<div class="grid-2">
+						<div class="callout">
+							<h3>大学生：优先考虑合租（Share House）</h3>
+							<p style="margin:0; color: var(--muted);">对大多数学生来说，“从独立 Studio 改为合租单间”是最容易实现、回报最大的省钱方式。</p>
+						</div>
+						<div class="callout">
+							<h3>高中生（18 岁以下）：通常需要寄宿家庭/学校认可住宿</h3>
+							<p style="margin: 0 0 8px; color: var(--muted);">墨尔本常见寄宿家庭价格约 AUD $420/周。</p>
+							<div class="big-number">
+								<div class="k">4 周参考</div>
+								<div class="v">AUD $1,680</div>
+								<div class="s">选校时除了学费，也要提前计算住宿预算。</div>
+							</div>
+						</div>
+					</div>
+
+					<h3 style="margin: 18px 0 10px;">🎟️ 学生优惠：别把“学生身份”浪费掉</h3>
+					<div class="grid-3">
+						<div class="callout">
+							<h3>科技产品</h3>
+							<ul>
+								<li>Apple Education Store</li>
+								<li>Microsoft Student</li>
+								<li>Adobe Student Plan</li>
+							</ul>
+						</div>
+						<div class="callout">
+							<h3>娱乐订阅</h3>
+							<ul>
+								<li>Spotify Student</li>
+								<li>YouTube Premium Student</li>
+								<li>Amazon Prime Student</li>
+							</ul>
+							<p style="margin-top: 8px; color: var(--muted);">通常可享受约 50% 左右折扣。</p>
+						</div>
+						<div class="callout">
+							<h3>学习工具</h3>
+							<ul>
+								<li>GitHub Student Developer Pack</li>
+								<li>Canva Education</li>
+								<li>Notion Education</li>
+							</ul>
+							<p style="margin-top: 8px; color: var(--muted);">部分原价收费服务可免费使用。</p>
+						</div>
+					</div>
+					<div class="callout" style="background: var(--bg-alt);">
+						<h3 style="margin: 0 0 6px;">交通优惠（维州）</h3>
+						<p style="margin:0; color: var(--muted);">维州：18 岁以下学生可免费乘坐公共交通。</p>
+					</div>
+
+					<h3 style="margin: 18px 0 10px;">🛒 二手市场：一次搬家就能省很多</h3>
+					<div class="grid-2">
+						<div class="callout">
+							<h3>推荐平台</h3>
+							<ul>
+								<li>Facebook Marketplace</li>
+								<li>Gumtree</li>
+							</ul>
+							<p style="margin-top: 8px; color: var(--muted);">很多商品价格仅为新品的 20%–50%。</p>
+						</div>
+						<div class="callout">
+							<h3>特别适合买什么？</h3>
+							<ul>
+								<li>书桌 / 椅子 / 显示器</li>
+								<li>电风扇 / 小家电</li>
+								<li>厨房用品</li>
+							</ul>
+						</div>
+					</div>
+
+					<h3 style="margin: 18px 0 10px;">中国留学生最容易踩的坑</h3>
+					<div class="grid-3">
+						<div class="callout">
+							<h3>❌ 一来就租 CBD 学生公寓</h3>
+							<p>通常属于最贵的住宿选择之一。</p>
+						</div>
+						<div class="callout">
+							<h3>❌ 买全新家具</h3>
+							<p>很多家具二手市场价格仅为新品的几分之一。</p>
+						</div>
+						<div class="callout">
+							<h3>❌ 只关注学费</h3>
+							<p>实际上：住宿费用往往才是最大的长期支出。</p>
+						</div>
+					</div>
+
+					<div class="callout warn" aria-label="个人建议">
+						<h3 style="margin: 0 0 6px;">个人建议（Personal Recommendations）</h3>
+						<p style="margin: 0 0 8px; color: var(--muted);">⚠️ 以下内容基于个人观察和经验总结，仅供参考。</p>
+						<p style="margin: 0 0 8px;">如果只能选择三种最有效的省钱方式：</p>
+						<ul>
+							<li>✅ 选择合适的住宿方式</li>
+							<li>✅ 充分利用学生折扣</li>
+							<li>✅ 善用二手市场</li>
+						</ul>
+						<p style="margin-top: 8px; color: var(--muted);">对大多数留学生而言，这些方法带来的节省远远高于少喝几杯奶茶或少吃几顿外卖。</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<div class="container">
+			<h4>Australia Student Hub</h4>
+			<p>帮助中国留学生解决学习、生活、就业与未来发展问题。</p>
+			<p style="margin-top: 10px; color: rgba(255,255,255,0.72); font-size: 12.5px;">Information for educational purposes only.</p>
+		</div>
+	</footer>
+</body>
+</html>
+		.notice { border-radius: var(--radius-lg); padding: 14px; border: 1px solid var(--border); }
+		.notice.info { background: rgba(0, 87, 184, 0.10); border-color: rgba(0, 87, 184, 0.22); }
+		.notice.success { background: var(--success); border-color: rgba(38, 144, 75, 0.22); }
+		.notice.warn { background: var(--warn); border-color: rgba(255, 167, 38, 0.30); }
