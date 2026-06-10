@@ -1,0 +1,1561 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>澳大利亚学生服务中心</title>
+	<meta name="description" content="为在澳大利亚生活与学习的学生提供权威风格的指南、资源与信息。" />
+	<link rel="stylesheet" href="_shared.css" />
+	<script defer src="search-index.js"></script>
+	<style>
+		:root {
+			--navy: #003366;
+			--navy-2: #0057B8;
+			--ink: #13213c;
+			--muted: #5f6b7a;
+			--border: #d9dee7;
+			--bg: #FFFFFF;
+			--bg-alt: #F5F7FA;
+			--success: #EAF7EE;
+			--warn: #FFF4E5;
+			--focus: #ffbf47;
+			--card: #ffffff;
+			--shadow: 0 8px 24px rgba(0, 51, 102, 0.12);
+			--shadow-sm: 0 4px 14px rgba(0, 51, 102, 0.10);
+			--radius: 14px;
+			--radius-sm: 10px;
+			--radius-lg: 16px;
+			--max: 1200px;
+			--font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans SC", "Noto Sans", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Helvetica, sans-serif;
+		}
+
+		* { box-sizing: border-box; }
+		html, body { height: 100%; }
+		html { scroll-behavior: smooth; }
+		body {
+			margin: 0;
+			font-family: var(--font);
+			color: var(--ink);
+			background: var(--bg-alt);
+			line-height: 1.45;
+		}
+
+		a { color: var(--navy-2); text-decoration: none; }
+		a:hover { text-decoration: underline; }
+		a:focus-visible, button:focus-visible, input:focus-visible {
+			outline: 3px solid var(--focus);
+			outline-offset: 2px;
+			border-radius: 6px;
+		}
+
+		.container { max-width: var(--max); margin: 0 auto; padding: 0 18px; }
+
+		.skip-link {
+			position: absolute;
+			left: -999px;
+			top: 12px;
+			z-index: 9999;
+			background: var(--focus);
+			color: #111;
+			padding: 10px 12px;
+			border-radius: 8px;
+			font-weight: 700;
+		}
+		.skip-link:focus { left: 12px; }
+
+		header { background: var(--navy); color: #fff; }
+		.topbar {
+			display: flex;
+			align-items: center;
+			gap: 16px;
+			padding: 14px 0;
+		}
+		.brand {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			min-width: 260px;
+		}
+		.coa {
+			width: 34px;
+			height: 34px;
+			border-radius: 6px;
+			background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.06));
+			display: grid;
+			place-items: center;
+			border: 1px solid rgba(255,255,255,0.18);
+		}
+		.brand h1 {
+			font-size: 16px;
+			margin: 0;
+			letter-spacing: 0.2px;
+		}
+		.brand .subtitle {
+			font-size: 12px;
+			color: rgba(255,255,255,0.78);
+			margin: 0;
+		}
+
+		.navwrap {
+			flex: 1;
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			gap: 10px;
+		}
+
+		.menu-button {
+			display: none;
+			background: transparent;
+			color: #fff;
+			border: 1px solid rgba(255,255,255,0.18);
+			padding: 10px 12px;
+			border-radius: 10px;
+			font-weight: 700;
+			cursor: pointer;
+		}
+
+		nav.primary {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+		}
+		.nav-item { position: relative; }
+		.nav-link {
+			display: inline-flex;
+			align-items: center;
+			gap: 6px;
+			color: #fff;
+			padding: 10px 10px;
+			border-radius: 10px;
+			font-weight: 700;
+			white-space: nowrap;
+		}
+		.nav-link:hover { background: rgba(255,255,255,0.08); text-decoration: none; }
+		.nav-link[aria-current="page"] { background: rgba(255,255,255,0.12); }
+
+		.dropdown {
+			position: absolute;
+			top: 44px;
+			right: 0;
+			width: 260px;
+			background: #fff;
+			color: var(--ink);
+			border: 1px solid var(--border);
+			border-radius: 14px;
+			box-shadow: var(--shadow);
+			padding: 10px;
+			display: none;
+			z-index: 20;
+		}
+		.nav-item:focus-within .dropdown,
+		.nav-item:hover .dropdown { display: block; }
+		.dropdown a {
+			display: block;
+			padding: 10px 10px;
+			border-radius: 10px;
+			font-weight: 600;
+			color: var(--ink);
+		}
+		.dropdown a:hover { background: var(--bg-alt); text-decoration: none; }
+		.dropdown small { display: block; color: var(--muted); margin-top: 2px; font-weight: 500; }
+
+		/* Full-width hero */
+		.hero {
+			background: linear-gradient(135deg, #003366 0%, #0057B8 100%);
+			min-height: 600px;
+			display: flex;
+			align-items: center;
+			padding: 48px 0;
+		}
+		.hero-card {
+			background: transparent;
+			border: none;
+			box-shadow: none;
+			padding: 0;
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 18px;
+			align-items: center;
+			text-align: center;
+		}
+		.hero h2 { margin: 0; font-size: 40px; letter-spacing: -0.3px; color: #fff; }
+		.hero p { margin: 8px 0 0; color: rgba(255,255,255,0.88); font-size: 16px; }
+		.search { margin: 18px auto 0; display: flex; gap: 10px; width: min(760px, 100%); }
+		.search input {
+			flex: 1;
+			padding: 16px 16px;
+			border-radius: 14px;
+			border: 1px solid rgba(255,255,255,0.22);
+			background: rgba(255,255,255,0.96);
+			font-size: 15px;
+		}
+		.search button {
+			padding: 16px 18px;
+			border-radius: 14px;
+			border: 1px solid rgba(255,255,255,0.20);
+			background: rgba(0, 51, 102, 0.92);
+			color: #fff;
+			font-weight: 800;
+			cursor: pointer;
+		}
+		.search button:hover { background: rgba(0, 51, 102, 1); }
+
+		.hero-aside {
+			margin: 10px auto 0;
+			padding: 14px 16px;
+			border-radius: 16px;
+			border: 1px solid rgba(255,255,255,0.18);
+			background: rgba(255,255,255,0.08);
+			max-width: 900px;
+		}
+		.aside-title { margin: 0 0 8px; font-weight: 900; font-size: 13px; letter-spacing: 0.08em; color: var(--navy); text-transform: uppercase; }
+		.aside-title { color: rgba(255,255,255,0.92); }
+		.aside-list { margin: 0; padding-left: 16px; color: rgba(255,255,255,0.86); font-size: 14px; }
+		.aside-list li { margin: 6px 0; }
+		.hot-searches { margin-top: 10px; color: rgba(255,255,255,0.86); font-size: 13.5px; }
+		.hot-searches a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+		.hot-searches a:hover { opacity: 0.92; }
+
+		.section { padding: 24px 0; }
+		.section-title {
+			display: flex;
+			align-items: baseline;
+			justify-content: space-between;
+			gap: 10px;
+			margin: 0 0 14px;
+		}
+		.section-title h3 { margin: 0; font-size: 20px; }
+		.section-title .hint { margin: 0; color: var(--muted); font-size: 13.5px; }
+
+		.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+		.card {
+			background: var(--card);
+			border: 1px solid var(--border);
+			border-radius: var(--radius-lg);
+			padding: 14px;
+			box-shadow: var(--shadow-sm);
+			min-height: 92px;
+		}
+		.card .emoji { font-size: 22px; }
+		.card h4 { margin: 8px 0 4px; font-size: 15.5px; }
+		.card p { margin: 0; color: var(--muted); font-size: 13.5px; }
+		.card:hover { border-color: #c9d2df; box-shadow: var(--shadow); transform: translateY(-3px); transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease; }
+		.card { transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease; }
+
+		.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+		.journey {
+			background: var(--bg-alt);
+			border-top: 1px solid var(--border);
+			border-bottom: 1px solid var(--border);
+		}
+		.path {
+			display: grid;
+			grid-template-columns: repeat(7, minmax(140px, 1fr));
+			gap: 10px;
+			overflow-x: auto;
+			padding-bottom: 6px;
+		}
+		.step {
+			background: #fff;
+			border: 1px solid var(--border);
+			border-radius: 14px;
+			padding: 12px;
+			min-width: 160px;
+		}
+		.step .k { font-size: 12px; font-weight: 900; color: var(--navy); letter-spacing: 0.06em; text-transform: uppercase; }
+		.step .t { margin: 4px 0 0; font-weight: 800; }
+
+		.table-wrap {
+			border: 1px solid var(--border);
+			border-radius: var(--radius);
+			overflow: hidden;
+			background: #fff;
+		}
+		table { width: 100%; border-collapse: collapse; }
+		thead { background: #eef2f8; }
+		th, td {
+			padding: 12px 12px;
+			border-bottom: 1px solid var(--border);
+			text-align: left;
+			vertical-align: top;
+			font-size: 13.5px;
+		}
+		th { font-size: 12.5px; letter-spacing: 0.03em; text-transform: uppercase; color: #243552; }
+		tbody tr:hover { background: #fafcff; }
+		.tag {
+			display: inline-block;
+			padding: 4px 8px;
+			border-radius: 999px;
+			border: 1px solid var(--border);
+			background: #fff;
+			font-size: 12px;
+			color: #2a3a57;
+			white-space: nowrap;
+		}
+		.table-tools {
+			display: flex;
+			gap: 10px;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: space-between;
+			padding: 12px;
+			border-bottom: 1px solid var(--border);
+			background: #fff;
+		}
+		.table-tools input {
+			flex: 1;
+			min-width: 240px;
+			padding: 12px 12px;
+			border-radius: 12px;
+			border: 1px solid var(--border);
+			font-size: 14px;
+		}
+		.table-tools .note { color: var(--muted); font-size: 13px; }
+
+		.breadcrumbs { padding: 14px 0 6px; color: var(--muted); font-size: 13px; }
+		.breadcrumbs a { color: var(--muted); }
+		.page { padding: 10px 0 24px; }
+		.page h2 { margin: 8px 0 8px; font-size: 26px; }
+		.page .lede { margin: 0 0 14px; color: var(--muted); }
+		.callout {
+			background: #fff;
+			border: 1px solid var(--border);
+			border-radius: var(--radius);
+			padding: 14px;
+			box-shadow: 0 1px 0 rgba(11,31,58,0.04);
+		}
+		.data-card {
+			background: var(--bg-alt);
+			border: 1px solid var(--border);
+			border-radius: var(--radius-lg);
+			padding: 12px 12px;
+		}
+		.data-card .k { font-size: 12px; font-weight: 900; color: var(--navy); letter-spacing: 0.06em; text-transform: uppercase; }
+		.data-card .v { font-size: 22px; font-weight: 900; color: var(--navy-2); margin-top: 2px; }
+		.data-card .s { font-size: 13px; color: var(--muted); margin-top: 4px; }
+		.notice { border-radius: var(--radius); padding: 14px; border: 1px solid var(--border); }
+		.notice.info { background: rgba(0, 87, 184, 0.10); border-color: rgba(0, 87, 184, 0.22); }
+		.notice.success { background: var(--success); border-color: rgba(38, 144, 75, 0.22); }
+		.notice.warn { background: var(--warn); border-color: rgba(255, 167, 38, 0.30); }
+		.callout h3 { margin: 0 0 6px; font-size: 16px; }
+		.callout ul { margin: 0; padding-left: 18px; color: var(--muted); }
+		.callout li { margin: 6px 0; }
+
+		footer {
+			border-top: 1px solid var(--border);
+			background: var(--navy);
+			color: rgba(255,255,255,0.86);
+			padding: 22px 0;
+		}
+		footer .fgrid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 12px; align-items: start; }
+		footer h4 { margin: 0 0 6px; font-size: 14px; color: #fff; }
+		footer p { margin: 0; font-size: 13px; color: rgba(255,255,255,0.72); }
+		footer .links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+		footer .links a { color: rgba(255,255,255,0.86); font-size: 13px; }
+
+		@media (max-width: 960px) {
+			.hero-card { grid-template-columns: 1fr; }
+			.hero-aside { border-left: none; padding-left: 0; border-top: 1px solid var(--border); padding-top: 14px; }
+			.grid { grid-template-columns: repeat(2, 1fr); }
+			footer .fgrid { grid-template-columns: 1fr; }
+			footer .links { justify-content: flex-start; }
+		}
+		@media (max-width: 700px) {
+			.menu-button { display: inline-flex; }
+			nav.primary {
+				display: none;
+				position: absolute;
+				left: 18px;
+				right: 18px;
+				top: 70px;
+				background: #fff;
+				color: var(--ink);
+				border: 1px solid var(--border);
+				border-radius: 16px;
+				padding: 10px;
+				box-shadow: var(--shadow);
+				z-index: 40;
+			}
+			nav.primary.open { display: grid; grid-template-columns: 1fr; }
+			.nav-link { color: var(--ink); background: var(--bg-alt); }
+			.nav-link:hover { background: #eaf0f9; }
+			.dropdown { position: static; width: 100%; border: none; box-shadow: none; padding: 0 0 6px; display: block; background: transparent; }
+			.nav-item:hover .dropdown, .nav-item:focus-within .dropdown { display: block; }
+			.dropdown a { background: #fff; border: 1px solid var(--border); margin-top: 8px; }
+			.grid { grid-template-columns: 1fr; }
+			.grid-2 { grid-template-columns: 1fr; }
+		}
+
+		/* Hot Q&A (grouped) */
+		.qa-group { margin-top: 18px; }
+		.qa-title { margin: 0 0 12px; font-size: 16px; }
+		.qa-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+		@media (max-width: 980px) { .qa-grid { grid-template-columns: repeat(2, 1fr); } }
+		@media (max-width: 640px) { .qa-grid { grid-template-columns: 1fr; } }
+		.qa-link { display: block; }
+		.qa-link:hover { text-decoration: none; }
+		.qa-link .card {
+			background: #fff;
+			border: 1px solid var(--border);
+			border-radius: var(--radius-lg);
+			padding: 16px;
+			box-shadow: var(--shadow-sm);
+			transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+			min-height: 170px; /* < 250px */
+		}
+		.qa-link .card:hover { transform: translateY(-2px); box-shadow: var(--shadow); border-color: #c9d2df; }
+		.qa-link .card-icon {
+			width: 40px;
+			height: 40px;
+			border-radius: 12px;
+			display: grid;
+			place-items: center;
+			background: var(--bg-alt);
+			border: 1px solid var(--border);
+			margin-bottom: 10px;
+			font-size: 20px;
+		}
+		.qa-link .card h3 { margin: 0 0 8px; font-size: 16px; color: var(--navy); }
+		.qa-link .card p { margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.5; }
+
+		/* Site search results */
+		.search-results { margin-top: 14px; display: none; }
+		.search-results.active { display: block; }
+		.search-results .panel { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 16px; box-shadow: var(--shadow-sm); }
+		.search-results .panel-title { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+		.search-results .panel-title h4 { margin: 0; font-size: 14px; color: var(--navy); }
+		.search-results .close { border: 1px solid var(--border); background: #fff; border-radius: 10px; padding: 8px 10px; font-weight: 900; cursor: pointer; color: var(--ink); }
+		.search-results .close:hover { background: #fbfcfe; }
+		.search-results .meta { color: var(--muted); font-size: 13.5px; margin-top: 6px; }
+		.search-results .result-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 14px; }
+		@media (max-width: 980px) { .search-results .result-grid { grid-template-columns: repeat(2, 1fr); } }
+		@media (max-width: 640px) { .search-results .result-grid { grid-template-columns: 1fr; } }
+		.search-results .result-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 14px; box-shadow: none; display: block; }
+		.search-results .result-card:hover { border-color: #bfc9d8; background: #fbfcfe; text-decoration: none; }
+		.search-results .result-card h5 { margin: 0 0 8px; color: var(--navy); font-size: 15px; }
+		.search-results .result-card p { margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.5; }
+		.search-results .view { margin-top: 10px; font-weight: 900; color: var(--navy-2); }
+	</style>
+</head>
+<body>
+	<a class="skip-link" href="#main">跳到主要内容</a>
+
+	<header>
+		<div class="container">
+			<div class="topbar">
+				<div class="brand" aria-label="站点标识">
+					<div class="coa" aria-hidden="true">AU</div>
+					<div>
+						<h1>澳大利亚学生服务中心</h1>
+						<p class="subtitle">面向学生的权威风格指南与服务信息</p>
+					</div>
+				</div>
+
+				<div class="navwrap">
+					<button class="menu-button" id="menuBtn" type="button" aria-controls="primaryNav" aria-expanded="false">菜单</button>
+					<nav class="primary" id="primaryNav" aria-label="主导航">
+						<div class="nav-item">
+							<a class="nav-link" href="study-hub.html">在澳学习</a>
+							<div class="dropdown" aria-label="学习 子菜单">
+								<a href="study.html#edu-system">澳洲教育体系<small>Prep / Year 7–12 / 学校类型</small></a>
+								<a href="study.html#vce-atar">VCE 与 ATAR<small>维州 VCE 与大学录取排名</small></a>
+								<a href="study.html#academic">学习方法与学术写作<small>论文、引用、持续评估</small></a>
+								<a href="study.html#ai-tools">AI 学习工具<small>合规使用与效率提升</small></a>
+								<a href="study.html#pathways">大学与 TAFE 路径<small>升学与转学分路线</small></a>
+							</div>
+						</div>
+						<div class="nav-item">
+							<a class="nav-link" href="housing-hub.html">住宿与租房</a>
+							<div class="dropdown" aria-label="生活 子菜单">
+								<a href="#/living/accommodation">住宿<small>租房、学生公寓</small></a>
+								<a href="#/living/transport">交通<small>公共交通与出行</small></a>
+								<a href="#/living/cost-of-living">生活成本<small>预算与省钱</small></a>
+								<a href="#/living/student-life">学生生活<small>社区、安全与服务</small></a>
+							</div>
+						</div>
+						<div class="nav-item">
+							<a class="nav-link" href="employment-hub.html">工作与就业</a>
+							<div class="dropdown" aria-label="工作 子菜单">
+								<a href="#/work/part-time">兼职工作<small>找工作与准备</small></a>
+								<a href="#/work/internships">实习<small>实习机会与项目</small></a>
+								<a href="#/work/career">职业发展<small>面试与社交</small></a>
+								<a href="#/work/resume">简历资源<small>模板与示例</small></a>
+							</div>
+						</div>
+						<div class="nav-item">
+							<a class="nav-link" href="finance-hub.html">银行与财务</a>
+							<div class="dropdown" aria-label="财务 子菜单">
+								<a href="#/finance/banking">银行业务<small>开户、用卡与安全</small></a>
+								<a href="#/finance/budgeting">预算管理<small>规划支出与储蓄</small></a>
+								<a href="#/finance/taxes">税务<small>TFN 与基础概念</small></a>
+								<a href="#/finance/tools">财务工具<small>应用与计算器</small></a>
+							</div>
+						</div>
+						<div class="nav-item">
+							<a class="nav-link" href="pr-hub.html">移民与PR</a>
+							<div class="dropdown" aria-label="政府服务 子菜单">
+								<a href="#/government/student-visas">学生签证<small>了解要求与条件</small></a>
+								<a href="#/government/mygov">myGov<small>访问政府线上服务</small></a>
+								<a href="#/government/tfn">TFN<small>税号必备信息</small></a>
+								<a href="#/government/medicare">Medicare<small>资格与使用</small></a>
+								<a href="#/government/services">官方渠道<small>查找可信信息来源</small></a>
+							</div>
+						</div>
+						<div class="nav-item">
+							<a class="nav-link" href="#/technology">科技工具</a>
+							<div class="dropdown" aria-label="科技工具 子菜单">
+								<a href="#/technology/ai-tools">AI 工具<small>学习与写作辅助</small></a>
+								<a href="#/technology/productivity">效率应用<small>专注与计划</small></a>
+								<a href="#/technology/research">研究工具<small>文献与引用</small></a>
+								<a href="#/technology/platforms">学习平台<small>课程与练习</small></a>
+							</div>
+						</div>
+						<a class="nav-link" href="#/resources">资源库</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main id="main">
+		<section class="hero" id="homeView" data-view>
+			<div class="container">
+				<div class="hero-card">
+					<div>
+						<h2>澳大利亚学生服务中心</h2>
+						<p>帮助中国留学生快速了解澳洲学习、生活、就业与未来发展。</p>
+						<form class="search" onsubmit="return doSearch(event)">
+							<input id="siteSearch" type="search" placeholder="搜索问题、指南、资源..." aria-label="搜索" />
+							<button type="submit">搜索</button>
+						</form>
+						<div class="search-results" id="searchResults" aria-label="站内搜索结果">
+							<div class="panel">
+								<div class="panel-title">
+									<h4 id="searchTitle">搜索结果</h4>
+									<button class="close" type="button" onclick="closeSearchResults()" aria-label="关闭搜索结果">关闭</button>
+								</div>
+								<div class="meta" id="searchMeta"></div>
+								<div class="result-grid" id="searchGrid"></div>
+							</div>
+						</div>
+						<div class="hot-searches" aria-label="热门搜索">
+							<strong>热门搜索：</strong>
+							<a href="save-money.html">💰 留学费用</a>
+							&nbsp;·&nbsp;
+							<a href="#/living/accommodation">🏠 住宿租房</a>
+							&nbsp;·&nbsp;
+							<a href="study.html#academic">📚 大学学习</a>
+							&nbsp;·&nbsp;
+							<a href="pr.html">🦘 PR 规划</a>
+						</div>
+					</div>
+					<aside class="hero-aside" aria-label="快速提示">
+						<p class="aside-title">快速提示</p>
+						<ul class="aside-list">
+							<li>优先使用可信、官方渠道的信息。</li>
+							<li>整理并保存关键文件（护照、签证、录取/在读证明）。</li>
+							<li>了解租房与工作的基本权益与义务。</li>
+						</ul>
+					</aside>
+				</div>
+			</div>
+		</section>
+
+		<section class="section" id="homeQuickActions" data-view>
+			<div class="container">
+				<div class="section-title">
+					<h3>热门问题</h3>
+					<p class="hint">按照留学生最常见的时间线整理。</p>
+				</div>
+
+				<div class="qa-group" aria-label="出发前准备">
+					<h4 class="qa-title">出发前准备</h4>
+					<div class="qa-grid">
+						<a class="qa-link" href="packing-list.html" aria-label="出发前必须带什么？">
+							<div class="card">
+								<div class="card-icon">🎒</div>
+								<h3>出发前必须带什么？</h3>
+								<p>文件、药品、电子产品、住宿用品与入境注意事项。</p>
+							</div>
+						</a>
+						<a class="qa-link" href="phone-plan-guide.html" aria-label="澳洲电话卡怎么办？">
+							<div class="card">
+								<div class="card-icon">📱</div>
+								<h3>澳洲电话卡怎么办？</h3>
+								<p>Telstra、Boost、Optus 与办理流程。</p>
+							</div>
+						</a>
+						<a class="qa-link" href="save-money.html" aria-label="如何减少留学开支？">
+							<div class="card">
+								<div class="card-icon">💰</div>
+								<h3>如何减少留学开支？</h3>
+								<p>住宿、学生优惠、二手平台与真实省钱方式。</p>
+							</div>
+						</a>
+						<a class="qa-link" href="housing-hub.html" aria-label="如何找住宿？">
+							<div class="card">
+								<div class="card-icon">🏠</div>
+								<h3>如何找住宿？</h3>
+								<p>寄宿家庭、学生公寓、合租与租房平台推荐。</p>
+							</div>
+						</a>
+					</div>
+				</div>
+
+				<div class="qa-group" aria-label="到澳洲后">
+					<h4 class="qa-title">到澳洲后</h4>
+					<div class="qa-grid">
+						<a class="qa-link" href="banking-guide.html" aria-label="如何办理银行卡？">
+							<div class="card">
+								<div class="card-icon">🏦</div>
+								<h3>如何办理银行卡？</h3>
+								<p>CommBank、ANZ、NAB、Westpac 开户指南。</p>
+							</div>
+						</a>
+						<a class="qa-link" href="transport-cost.html" aria-label="交通与生活成本">
+							<div class="card">
+								<div class="card-icon">🚆</div>
+								<h3>交通与生活成本</h3>
+								<p>公共交通、日常消费与基础生活预算。</p>
+							</div>
+						</a>
+						<a class="qa-link" href="part-time-guide.html" aria-label="学生兼职怎么找？">
+							<div class="card">
+								<div class="card-icon">💼</div>
+								<h3>学生兼职怎么找？</h3>
+								<p>兼职类型、工资水平、TFN 与工作时间限制。</p>
+							</div>
+						</a>
+					</div>
+				</div>
+
+				<div class="qa-group" aria-label="学习期间">
+					<h4 class="qa-title">学习期间</h4>
+					<div class="qa-grid">
+						<a class="qa-link" href="fail-risk.html" aria-label="澳洲大学容易挂科吗？">
+							<div class="card">
+								<div class="card-icon">📚</div>
+								<h3>澳洲大学容易挂科吗？</h3>
+								<p>评分体系、挂科原因、Essay 与防挂科建议。</p>
+							</div>
+						</a>
+						<a class="qa-link" href="ai-tools.html" aria-label="澳洲学生必备AI工具">
+							<div class="card">
+								<div class="card-icon">🤖</div>
+								<h3>澳洲学生必备AI工具</h3>
+								<p>ChatGPT、Claude、Perplexity、Notion AI 与学习效率工具。</p>
+							</div>
+						</a>
+						<a class="qa-link" href="education-system.html" aria-label="澳洲教育体系">
+							<div class="card">
+								<div class="card-icon">🇦🇺</div>
+								<h3>澳洲教育体系</h3>
+								<p>VCE、ATAR、TAFE 与大学升学路径。</p>
+							</div>
+						</a>
+					</div>
+				</div>
+
+				<div class="qa-group" aria-label="毕业与未来">
+					<h4 class="qa-title">毕业与未来</h4>
+					<div class="qa-grid">
+						<a class="qa-link" href="pr.html" aria-label="毕业后能拿PR吗？">
+							<div class="card">
+								<div class="card-icon">🦘</div>
+								<h3>毕业后能拿PR吗？</h3>
+								<p>PR 基础、技术移民、常见误区与时间线。</p>
+							</div>
+						</a>
+						<a class="qa-link" href="jobs.html" aria-label="澳洲就业环境怎么样？">
+							<div class="card">
+								<div class="card-icon">💼</div>
+								<h3>澳洲就业环境怎么样？</h3>
+								<p>毕业生就业、实习、本地经验与英语要求。</p>
+							</div>
+						</a>
+						<a class="qa-link" href="pr-options.html" aria-label="除了PR还有哪些选择？">
+							<div class="card">
+								<div class="card-icon">🌏</div>
+								<h3>除了PR还有哪些选择？</h3>
+								<p>雇主担保、回国发展、第三国发展与继续深造。</p>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section" id="homePopular" data-view>
+			<div class="container">
+				<div class="section-title">
+					<h3>热门信息</h3>
+					<p class="hint">常用主题卡片</p>
+				</div>
+				<div class="grid-2">
+					<a class="card" href="#/living/new-students"><h4>新生指南</h4><p>抵达澳大利亚后需要做的关键事项。</p></a>
+					<a class="card" href="#/living/accommodation"><h4>寻找住宿</h4><p>租房平台、学生公寓与找室友建议。</p></a>
+					<a class="card" href="#/work/part-time"><h4>边读书边工作</h4><p>兼职、实习与职场信息。</p></a>
+					<a class="card" href="#/finance/banking"><h4>银行开户</h4><p>开立账户与日常财务管理。</p></a>
+					<a class="card" href="#/living/health"><h4>医疗与支持</h4><p>就医渠道与学生身心支持。</p></a>
+					<a class="card" href="#/living/discounts"><h4>学生优惠</h4><p>折扣项目与省钱资源汇总。</p></a>
+				</div>
+			</div>
+		</section>
+
+		<section class="section journey" id="homeJourney" data-view>
+			<div class="container">
+				<div class="section-title">
+					<h3>学生旅程</h3>
+					<p class="hint">清晰的办理路径</p>
+				</div>
+				<div class="path" aria-label="学生旅程步骤">
+					<div class="step"><div class="k">步骤 1</div><div class="t">抵达澳大利亚</div></div>
+					<div class="step"><div class="k">步骤 2</div><div class="t">寻找住宿</div></div>
+					<div class="step"><div class="k">步骤 3</div><div class="t">开立银行账户</div></div>
+					<div class="step"><div class="k">步骤 4</div><div class="t">申请 TFN</div></div>
+					<div class="step"><div class="k">步骤 5</div><div class="t">设置交通出行</div></div>
+					<div class="step"><div class="k">步骤 6</div><div class="t">寻找兼职工作</div></div>
+					<div class="step"><div class="k">步骤 7</div><div class="t">提升职业技能</div></div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section" id="homeLatest" data-view>
+			<div class="container">
+				<div class="section-title">
+					<h3>最新指南</h3>
+					<p class="hint">文章卡片</p>
+				</div>
+				<div class="grid">
+					<a class="card" href="#/guides/accommodation"><h4>如何在澳大利亚找到学生住宿</h4><p>了解选项、安全看房与申请流程。</p></a>
+					<a class="card" href="#/guides/banking"><h4>学生银行选择建议</h4><p>开户前需要对比的关键点。</p></a>
+					<a class="card" href="#/guides/work"><h4>在澳大利亚边读书边工作</h4><p>求职准备与职场基本信息。</p></a>
+					<a class="card" href="#/guides/ai-tools"><h4>学生必备的 AI 工具</h4><p>负责任地使用 AI 提升学习与写作质量。</p></a>
+					<a class="card" href="#/guides/budget"><h4>学生预算指南</h4><p>建立每周预算并规划不定期支出。</p></a>
+					<a class="card" href="#/guides/melbourne"><h4>墨尔本学生生存指南</h4><p>交通、住宿与本地支持信息。</p></a>
+				</div>
+			</div>
+		</section>
+
+
+
+		<section class="section" id="resourcesView" data-view style="display:none;">
+			<div class="container">
+				<div class="breadcrumbs" id="breadcrumbs"></div>
+				<div class="page">
+					<h2 id="pageTitle">资源库</h2>
+					<p class="lede" id="pageLede">一个可搜索的学生资源清单。</p>
+
+					<div class="table-wrap" aria-label="精选资源">
+						<div class="table-tools">
+							<input id="resourceFilter" type="search" placeholder="按名称、分类或关键词搜索资源..." aria-label="搜索资源" />
+							<div class="note">显示 <span id="resourceCount">0</span> 条资源</div>
+						</div>
+						<div style="overflow:auto;">
+							<table>
+								<thead>
+									<tr>
+										<th>资源名称</th>
+										<th>分类</th>
+										<th>说明</th>
+										<th>官方网站</th>
+										<th>适用对象</th>
+										<th>难度</th>
+										<th>费用</th>
+									</tr>
+								</thead>
+								<tbody id="resourceRows"></tbody>
+							</table>
+						</div>
+					</div>
+
+					<div style="height: 16px;"></div>
+
+					<div class="callout" aria-label="关于本门户">
+						<h3>关于</h3>
+						<p style="margin:0; color: var(--muted);">澳大利亚学生服务中心提供清晰、结构化、实用的信息，帮助学生更容易找到关键资源并在学习期间做出更好的决策。</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section" id="subpageView" data-view style="display:none;">
+			<div class="container">
+				<div class="breadcrumbs" id="subBreadcrumbs"></div>
+				<div class="page">
+					<h2 id="subTitle">页面</h2>
+					<p class="lede" id="subLede">权威风格的指南与资源链接。</p>
+
+					<!-- Study in Australia 专属板块：澳洲教育体系（一级板块，置顶） -->
+					<div id="studyEduSystem" class="callout" style="display:none; margin: 14px 0 14px;">
+						<h3>澳洲教育体系（Australian Education System）</h3>
+						<p style="margin: 0 0 10px; color: var(--muted);">澳洲教育体系快速指南：如果你来自中国，第一次接触澳洲教育体系，最容易搞混的通常是 Prep 是什么、Year 12 相当于国内几年级、VCE 是什么、TAFE 是不是大专、澳洲大学如何录取等。本指南帮助中国留学生和家长快速了解澳洲教育体系。</p>
+
+						<div class="callout" style="background: var(--bg-alt);">
+							<h3 style="margin: 0 0 6px;">重点提示</h3>
+							<ul style="margin: 0;">
+								<li>Prep：小学入学前的预备/适应阶段（通常 5 岁左右）。</li>
+								<li>Year 11-12：澳洲高中升学准备阶段。</li>
+								<li>ATAR：排名（0.00–99.95），不是百分制分数。</li>
+								<li>TAFE：职业教育路径之一，很多课程可转学分进入大学。</li>
+							</ul>
+						</div>
+
+						<h3 style="margin-top: 14px;">学校阶段划分</h3>
+						<div class="grid-2">
+							<div class="callout">
+								<h3>学前教育</h3>
+								<p style="margin:0; color: var(--muted);">Kindergarten / Preschool（3–5 岁）。</p>
+							</div>
+							<div class="callout">
+								<h3>小学（Primary School）</h3>
+								<p style="margin:0; color: var(--muted);">Prep（预备班）、Year 1–Year 6（约 5–12 岁）。Prep 类似正式小学前的适应阶段。</p>
+							</div>
+							<div class="callout">
+								<h3>中学（Secondary School）· 初中阶段</h3>
+								<p style="margin:0; color: var(--muted);">Year 7–10（对应国内初中至高中前期）。</p>
+							</div>
+							<div class="callout">
+								<h3>中学（Secondary School）· 高中阶段</h3>
+								<p style="margin:0; color: var(--muted);">Year 11–12（澳洲大学升学准备阶段）。</p>
+							</div>
+						</div>
+
+						<h3 style="margin-top: 14px;">澳洲学校类型</h3>
+						<div class="grid-2">
+							<div class="callout">
+								<h3>公立学校（Public School）</h3>
+								<ul>
+									<li>政府资助</li>
+									<li>学费较低</li>
+									<li>按学区招生</li>
+								</ul>
+							</div>
+							<div class="callout">
+								<h3>教会学校（Catholic School）</h3>
+								<ul>
+									<li>中等学费</li>
+									<li>包含宗教课程</li>
+									<li>学术水平普遍较好</li>
+								</ul>
+							</div>
+							<div class="callout">
+								<h3>私立学校（Independent School）</h3>
+								<ul>
+									<li>学费较高</li>
+									<li>班级规模较小</li>
+									<li>设施和资源较丰富</li>
+								</ul>
+							</div>
+							<div class="callout">
+								<h3>什么是 VCE？（维多利亚州）</h3>
+								<p style="margin:0; color: var(--muted);">VCE（Victorian Certificate of Education）是维州高中毕业证书，完成 Year 11 和 Year 12 后取得。</p>
+							</div>
+						</div>
+
+						<h3 style="margin-top: 14px;">什么是 ATAR？</h3>
+						<div class="callout">
+							<p style="margin: 0; color: var(--muted);">ATAR（Australian Tertiary Admission Rank）是澳洲大学录取排名系统，范围 0.00–99.95。例如 ATAR 95 代表你的成绩超过 95% 的同龄毕业生。注意：ATAR 是排名，不是考试百分制成绩。</p>
+						</div>
+
+						<h3 style="margin-top: 14px;">两条主要升学路径</h3>
+						<div class="grid-2">
+							<div class="callout">
+								<h3>路线一：大学升学</h3>
+								<p style="margin:0; color: var(--muted);">Year 12 → 本科（Bachelor Degree）→ 硕士（Master Degree）。适合学术方向发展。</p>
+							</div>
+							<div class="callout">
+								<h3>路线二：TAFE 职业教育</h3>
+								<p style="margin:0; color: var(--muted);">TAFE → Certificate / Diploma → 就业或转入大学。适合技术与职业技能发展。说明：TAFE 不等于国内职高，许多课程可以转学分进入大学。</p>
+							</div>
+						</div>
+
+						<h3 style="margin-top: 14px;">澳洲学校如何评分</h3>
+						<div class="callout">
+							<p style="margin: 0 0 8px; color: var(--muted);">澳洲教育强调持续评估，而不仅仅是期末考试。最终成绩通常由多个部分共同决定。</p>
+							<ul style="margin: 0;">
+								<li>Essay（论文）</li>
+								<li>Presentation（演讲）</li>
+								<li>Group Project（小组项目）</li>
+								<li>Research Report（研究报告）</li>
+								<li>Exam（考试）</li>
+							</ul>
+						</div>
+
+						<h3 style="margin-top: 14px;">国际学生必须了解</h3>
+						<div class="grid-2">
+							<div class="callout">
+								<h3>英语能力非常重要</h3>
+								<p style="margin:0; color: var(--muted);">达到入学要求并不代表能够轻松完成学业。学术写作、课堂讨论和研究能力同样重要。</p>
+							</div>
+							<div class="callout">
+								<h3>保持出勤率</h3>
+								<p style="margin:0; color: var(--muted);">国际学生需要保持正常就读状态，长期缺课可能影响签证要求。</p>
+							</div>
+							<div class="callout">
+								<h3>学会自主学习</h3>
+								<ul style="margin:0;">
+									<li>独立思考</li>
+									<li>时间管理</li>
+									<li>主动提问</li>
+									<li>自主研究</li>
+								</ul>
+							</div>
+							<div class="callout">
+								<h3>中国学生常见误区</h3>
+								<ul style="margin:0;">
+									<li><strong>误区一：</strong>ATAR 决定人生。<br><span style="color: var(--muted);">实际情况：澳洲拥有多种升学路径。</span></li>
+									<li><strong>误区二：</strong>TAFE 等于差学校。<br><span style="color: var(--muted);">实际情况：许多技术职业收入和就业率都非常优秀。</span></li>
+									<li><strong>误区三：</strong>学校排名最重要。<br><span style="color: var(--muted);">实际情况：英语能力、学习习惯和实践经验往往更重要。</span></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<!-- Housing & Accommodation 专属板块：住宿与租房指南（一级板块） -->
+					<div id="housingGuide" style="display:none; margin: 14px 0 14px;">
+						<div class="callout">
+							<h3>住宿与租房指南</h3>
+							<p style="margin:0; color: var(--muted);">帮助中国留学生和家长了解澳洲常见住宿方式、租房平台以及未成年学生住宿要求。采用清晰分段结构、卡片布局与重点提示框，便于快速查找。</p>
+						</div>
+
+						<div class="callout" style="background: var(--bg-alt);">
+							<h3 style="margin: 0 0 6px;">重点提示框（未成年住宿）</h3>
+							<ul style="margin:0;">
+								<li><strong>18 岁以上：</strong>通常可以自行签署租房合同（合租 / 学生公寓 / 整租）。</li>
+								<li><strong>18 岁以下：</strong>通常不能像成年人一样自由租房；学校监护要求、法律责任、房东/中介政策及签证要求会限制选择。</li>
+								<li>很多学校要求未成年学生居住在<strong>学校批准</strong>的住宿环境中（如寄宿家庭或学校认可安排）。</li>
+							</ul>
+						</div>
+
+						<h3 style="margin-top: 14px;">未成年留学生住宿指南</h3>
+						<div class="grid-2">
+							<div class="callout">
+								<h3>未成年留学生可以自己租房吗？（18 岁以上）</h3>
+								<p style="margin: 0 0 8px; color: var(--muted);">可以自行签署租房合同，并选择：</p>
+								<ul>
+									<li>合租（Share House）</li>
+									<li>学生公寓（Student Accommodation）</li>
+									<li>整租公寓（Private Rental）</li>
+								</ul>
+							</div>
+							<div class="callout">
+								<h3>未成年留学生可以自己租房吗？（18 岁以下）</h3>
+								<p style="margin: 0 0 8px; color: var(--muted);">通常不能像成年人一样自由租房。原因包括：</p>
+								<ul>
+									<li>学校监护要求</li>
+									<li>未成年人法律责任问题</li>
+									<li>房东及中介政策限制</li>
+									<li>学生签证相关要求</li>
+								</ul>
+								<p style="margin: 8px 0 0; color: var(--muted);">许多学校会要求学生居住在经过批准的住宿环境中。</p>
+							</div>
+						</div>
+
+						<h3 style="margin-top: 14px;">国际高中生最常见的住宿方式</h3>
+						<div class="grid-2">
+							<div class="callout">
+								<h3>🏡 寄宿家庭（Homestay）</h3>
+								<p style="margin: 0 0 8px; color: var(--muted);">最常见的选择。通常提供：</p>
+								<ul>
+									<li>独立卧室</li>
+									<li>每日餐食</li>
+									<li>生活照顾</li>
+									<li>英语语言环境</li>
+								</ul>
+								<p style="margin: 8px 0 0; color: var(--muted);">适合：Year 7–12 国际学生、刚到澳洲的留学生、需要适应当地生活的学生。</p>
+							</div>
+							<div class="callout">
+								<h3>👨‍👩‍👧 父母陪读</h3>
+								<p style="margin: 0 0 8px; color: var(--muted);">部分家庭选择：</p>
+								<ul>
+									<li>家长在澳洲租房</li>
+									<li>学生正常入学就读</li>
+								</ul>
+								<p style="margin: 8px 0 0; color: var(--muted);">适合：年龄较小的学生、希望家庭陪伴的家庭。</p>
+							</div>
+							<div class="callout">
+								<h3>👤 监护人安排（Guardian）</h3>
+								<p style="margin: 0 0 8px; color: var(--muted);">若学生未满 18 岁且父母不在澳洲，学校通常要求：</p>
+								<ul>
+									<li>指定监护人（Guardian）</li>
+									<li>或学校认可的住宿安排</li>
+								</ul>
+								<p style="margin: 8px 0 0; color: var(--muted);">部分学校会提供相关服务或推荐机构。</p>
+							</div>
+							<div class="callout">
+								<h3>维州（墨尔本）常见情况</h3>
+								<p style="margin:0; color: var(--muted);">大多数中国高中留学生的住宿路径：<br>高中阶段（未满 18 岁） ↓ 寄宿家庭（Homestay） ↓ 年满 18 岁 ↓ 合租 / 学生公寓 / 独立租房</p>
+							</div>
+						</div>
+
+						<h3 style="margin-top: 14px;">推荐住宿顺序</h3>
+						<div class="grid-2">
+							<div class="callout">
+								<h3>高中生（未满 18 岁）</h3>
+								<ol style="margin:0; padding-left: 18px; color: var(--muted);">
+									<li>学校认可寄宿家庭</li>
+									<li>父母陪读</li>
+									<li>学校认可监护安排</li>
+								</ol>
+							</div>
+							<div class="callout">
+								<h3>大学新生</h3>
+								<ol style="margin:0; padding-left: 18px; color: var(--muted);">
+									<li>学生公寓</li>
+									<li>寄宿家庭</li>
+									<li>合租</li>
+								</ol>
+							</div>
+							<div class="callout">
+								<h3>已适应澳洲生活的学生</h3>
+								<ol style="margin:0; padding-left: 18px; color: var(--muted);">
+									<li>合租（性价比最高）</li>
+									<li>整租公寓</li>
+									<li>长期学生公寓</li>
+								</ol>
+							</div>
+							<div class="callout" style="background: var(--bg-alt);">
+								<h3 style="margin: 0 0 6px;">导航</h3>
+								<ul style="margin:0;">
+									<li><a href="#platforms-rental">整租平台</a></li>
+									<li><a href="#platforms-share">合租平台</a></li>
+									<li><a href="#platforms-homestay">寄宿家庭机构</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<h3 id="platforms-rental" style="margin-top: 14px;">推荐租房平台（整租）</h3>
+						<div class="grid-2">
+							<div class="callout">
+								<h3>🏠 Realestate.com.au</h3>
+								<p style="margin: 0 0 8px; color: var(--muted);">澳洲最大的房产与租房平台之一。</p>
+								<ul>
+									<li>适合：整租公寓、整租 House、长期租房</li>
+									<li>优点：房源数量最多、信息更新快、全澳覆盖</li>
+									<li>推荐指数：★★★★★</li>
+								</ul>
+								<p style="margin: 8px 0 0;"><a href="https://www.realestate.com.au" target="_blank" rel="noopener">https://www.realestate.com.au</a></p>
+							</div>
+							<div class="callout">
+								<h3>🏠 Domain</h3>
+								<p style="margin: 0 0 8px; color: var(--muted);">澳洲主流房产平台之一，适合查询租金行情与对比不同区域价格。</p>
+								<ul>
+									<li>适合：整租公寓、对比不同区域价格</li>
+									<li>推荐指数：★★★★★</li>
+								</ul>
+								<p style="margin: 8px 0 0;"><a href="https://www.domain.com.au" target="_blank" rel="noopener">https://www.domain.com.au</a></p>
+							</div>
+							<div class="callout">
+								<h3>🏠 Rent.com.au</h3>
+								<p style="margin: 0 0 8px; color: var(--muted);">专门针对租客设计的平台，适合新到澳洲的租客建立租房记录。</p>
+								<ul>
+									<li>适合：新到澳洲的租客、长期租房、建立租房记录</li>
+									<li>推荐指数：★★★★☆</li>
+								</ul>
+								<p style="margin: 8px 0 0;"><a href="https://www.rent.com.au" target="_blank" rel="noopener">https://www.rent.com.au</a></p>
+							</div>
+						</div>
+
+						<h3 id="platforms-share" style="margin-top: 14px;">推荐合租平台</h3>
+						<div class="grid-2">
+							<div class="callout">
+								<h3>👥 Flatmates</h3>
+								<p style="margin: 0 0 8px; color: var(--muted);">澳洲最大的合租与找室友平台之一，学生使用广泛。</p>
+								<ul>
+									<li>适合：大学生、新到澳洲的新生、寻找单间和室友</li>
+									<li>优点：房源多、操作简单</li>
+									<li>推荐指数：★★★★★</li>
+								</ul>
+								<p style="margin: 8px 0 0;"><a href="https://flatmates.com.au" target="_blank" rel="noopener">https://flatmates.com.au</a></p>
+							</div>
+							<div class="callout">
+								<h3>👥 Flatmate Finders</h3>
+								<p style="margin: 0 0 8px; color: var(--muted);">历史较久的室友匹配平台，适合长期合租与 Share House。</p>
+								<ul>
+									<li>推荐指数：★★★★☆</li>
+								</ul>
+								<p style="margin: 8px 0 0;"><a href="https://www.flatmatefinders.com.au" target="_blank" rel="noopener">https://www.flatmatefinders.com.au</a></p>
+							</div>
+							<div class="callout">
+								<h3>👥 RoomMates</h3>
+								<p style="margin: 0 0 8px; color: var(--muted);">免费发布与寻找房间的平台，适合预算有限或寻找短期住宿的学生。</p>
+								<ul>
+									<li>推荐指数：★★★☆☆</li>
+								</ul>
+								<p style="margin: 8px 0 0;"><a href="https://www.roommates.com.au" target="_blank" rel="noopener">https://www.roommates.com.au</a></p>
+							</div>
+						</div>
+
+						<h3 id="platforms-homestay" style="margin-top: 14px;">推荐寄宿家庭机构</h3>
+						<div class="grid-2">
+							<div class="callout">
+								<h3>🏡 Australian Homestay Network (AHN)</h3>
+								<p style="margin: 0 0 8px; color: var(--muted);">澳洲最大的国际学生寄宿家庭机构之一。</p>
+								<ul>
+									<li>适合：高中留学生、未满 18 岁国际学生、刚到澳洲的新生</li>
+								</ul>
+								<p style="margin: 8px 0 0;"><a href="https://www.homestaynetwork.org" target="_blank" rel="noopener">https://www.homestaynetwork.org</a></p>
+							</div>
+						</div>
+					</div>
+
+					<!-- 🎒 出发前必带清单（What to Bring）专属板块：先确定住宿方式，再准备行李 -->
+					<div id="bringByHousing" style="display:none; margin: 14px 0 14px;">
+						<div class="callout">
+							<h3>🏠 先确定住宿方式，再准备行李</h3>
+							<p style="margin:0; color: var(--muted);">很多中国留学生准备行李时都会忽略一个关键问题：<strong>寄宿家庭（Homestay）和自己租房（Rental）需要准备的东西完全不同。</strong>因此在购买行李箱或整理物品前，建议先确认自己的住宿安排。</p>
+						</div>
+
+						<div class="grid-2">
+							<div class="callout">
+								<h3>🏡 寄宿家庭（Homestay）</h3>
+								<p style="margin: 0 0 8px; color: var(--muted);"><strong>适合：</strong>高中留学生、未满 18 岁国际学生、刚到澳洲的新生</p>
+								<div class="callout" style="background: var(--bg-alt);">
+									<h3 style="margin: 0 0 6px;">通常已经提供</h3>
+									<ul style="margin:0;">
+										<li><strong>卧室家具：</strong>床、床垫、枕头、被子、床单、书桌、椅子、衣柜</li>
+										<li><strong>家庭公共设施：</strong>冰箱、微波炉、洗衣机、电热水壶、Wi‑Fi、吸尘器（部分家庭提供烘干机/打印机/学习空间）</li>
+										<li><strong>餐食：</strong>多数包含早餐与晚餐（以合同为准）</li>
+									</ul>
+								</div>
+								<h3 style="margin-top: 12px;">建议携带</h3>
+								<ul>
+									<li>护照及重要文件</li>
+									<li>电脑、手机等电子设备</li>
+									<li>常用药品</li>
+									<li>个人衣物</li>
+									<li>学习用品</li>
+								</ul>
+								<h3 style="margin-top: 12px;">一般不需要携带</h3>
+								<ul>
+									<li>❌ 被子 / 枕头 / 床单</li>
+									<li>❌ 电热水壶 / 电饭锅 / 小型家电</li>
+								</ul>
+							</div>
+
+							<div class="callout">
+								<h3>🏠 自己租房 / 合租（Rental）</h3>
+								<p style="margin: 0 0 8px; color: var(--muted);"><strong>适合：</strong>大学生、已适应澳洲生活的学生（Share House / Apartment / Unit）</p>
+								<div class="callout" style="background: var(--warn); border-color: rgba(255, 167, 38, 0.30);">
+									<h3 style="margin: 0 0 6px;">重要提醒</h3>
+									<p style="margin:0; color: var(--muted);">澳洲许多房源属于 <strong>Unfurnished（无家具）</strong>：可能只提供厨房、卫生间、空房间，其余物品需要自行购买。</p>
+								</div>
+								<h3 style="margin-top: 12px;">可能需要自己准备</h3>
+								<ul>
+									<li><strong>卧室：</strong>床架、床垫、枕头、被子、床单</li>
+									<li><strong>厨房：</strong>锅、碗、盘子、筷子、刀叉</li>
+									<li><strong>生活用品：</strong>晾衣架、台灯、电风扇、垃圾桶、收纳用品</li>
+								</ul>
+								<div class="data-card" aria-label="预算提示">
+									<div class="k">建议预留预算</div>
+									<div class="v">AUD $500 – $2,000+</div>
+									<div class="s">用于家具、床上用品、厨房用品、基础生活用品（取决于房屋配置与个人需求）</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="callout" style="background: var(--bg-alt);">
+							<h3 style="margin: 0 0 6px;">📦 行李准备建议（总结）</h3>
+							<div class="grid-2">
+								<div class="callout">
+									<h3>如果住寄宿家庭</h3>
+									<p style="margin:0; color: var(--muted);">推荐轻装出发：重点携带文件、药品、电子设备、衣物。因为大部分生活用品已经提供。</p>
+								</div>
+								<div class="callout">
+									<h3>如果直接租房</h3>
+									<p style="margin:0; color: var(--muted);">除了基本行李外，需要提前规划家具/床品/厨房用品采购。建议提前查看 Facebook Marketplace、Gumtree（二手家具常为新品 20%–50%）。</p>
+								</div>
+							</div>
+						</div>
+
+						<h3 style="margin-top: 12px;">中国留学生常见误区</h3>
+						<div class="grid-2">
+							<div class="callout">
+								<h3>❌ 误区一：带大量被子和床品来澳洲</h3>
+								<p style="margin:0; color: var(--muted);">实际上：寄宿家庭通常已经提供。</p>
+							</div>
+							<div class="callout">
+								<h3>❌ 误区二：以为租房后可直接入住</h3>
+								<p style="margin:0; color: var(--muted);">实际上：许多澳洲房源为空房状态，需要自行准备大量生活用品。</p>
+							</div>
+							<div class="callout">
+								<h3>❌ 误区三：忽略家具预算</h3>
+								<p style="margin:0; color: var(--muted);">部分学生刚到澳洲第一周就额外花费 AUD $500+ 购买基础家具和生活用品。</p>
+							</div>
+							<div class="callout" style="background: var(--warn); border-color: rgba(255, 167, 38, 0.30);">
+								<h3 style="margin: 0 0 6px;">个人建议（Personal Recommendations）</h3>
+								<p style="margin: 0 0 8px; color: var(--muted);">⚠️ 以下内容基于个人观察和经验总结，仅供参考。</p>
+								<ul style="margin:0;">
+									<li><strong>高中生：</strong>优先选择寄宿家庭（拎包入住、不用买家具、更容易适应、通常符合学校住宿要求）。</li>
+									<li><strong>大学生：</strong>预算有限时合租通常性价比最高，但务必提前预留家具与生活用品预算。</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="grid-2">
+						<div class="callout">
+							<h3>概览</h3>
+							<ul>
+								<li>面向学生的清晰信息结构。</li>
+								<li>可在“资源库”中搜索与筛选工具。</li>
+								<li>关键事项建议以官方渠道为准。</li>
+							</ul>
+						</div>
+						<div class="callout">
+							<h3>常见事项</h3>
+							<ul id="subTasks">
+								<li>查看步骤并准备资料。</li>
+								<li>保存重要链接便于后续使用。</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<div class="container">
+			<div class="fgrid">
+				<div>
+					<h4>Australia Student Hub</h4>
+					<p>帮助中国留学生解决学习、生活、就业与未来发展问题。</p>
+					<p style="margin-top: 10px; color: rgba(255,255,255,0.72); font-size: 12.5px;">Information for educational purposes only.</p>
+				</div>
+				<div>
+					<h4 style="text-align:right;">快速导航</h4>
+					<div class="links" aria-label="页脚快速导航">
+						<a href="study.html">📚 在澳学习</a>
+						<a href="#/living/accommodation">🏠 住宿与租房</a>
+						<a href="#/finance/banking">💰 银行与财务</a>
+						<a href="#/work">💼 工作与就业</a>
+						<a href="pr.html">🦘 移民与PR</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script>
+		const views = {
+			home: ["homeView", "homeQuickActions", "homePopular", "homeJourney", "homeLatest"],
+			resources: ["resourcesView"],
+			subpage: ["subpageView"],
+		};
+
+		const resources = [
+			{
+				name: "学习资源导航（示例）",
+				category: "学习资源",
+				description: "示例条目：用于展示资源库表格结构，可替换为真实资源。",
+				website: "",
+				recommendedFor: "新生",
+				difficulty: "入门",
+				cost: "免费",
+			},
+			{
+				name: "简历检查清单（示例）",
+				category: "职业发展",
+				description: "示例条目：准备澳式简历的关键检查点。",
+				website: "",
+				recommendedFor: "求职学生",
+				difficulty: "入门",
+				cost: "免费",
+			},
+			{
+				name: "预算规划模板（示例）",
+				category: "预算管理",
+				description: "示例条目：用于记录收入、房租、账单与日常开销。",
+				website: "",
+				recommendedFor: "所有学生",
+				difficulty: "入门",
+				cost: "免费",
+			},
+			{
+				name: "AI 学习工作流（示例）",
+				category: "AI 工具",
+				description: "示例条目：用于头脑风暴、列提纲与润色的合规用法示例。",
+				website: "",
+				recommendedFor: "大学生",
+				difficulty: "进阶",
+				cost: "免费 / 付费",
+			},
+		];
+
+		function setNavCurrent(path) {
+			const links = document.querySelectorAll(".nav-link");
+			links.forEach(l => l.removeAttribute("aria-current"));
+			const candidates = Array.from(links).filter(l => l.getAttribute("href") && path.startsWith(l.getAttribute("href").replace("#", "")));
+			if (candidates.length) candidates[0].setAttribute("aria-current", "page");
+		}
+
+		function show(viewKey) {
+			const all = document.querySelectorAll("[data-view]");
+			all.forEach(el => el.style.display = "none");
+			(views[viewKey] || []).forEach(id => {
+				const el = document.getElementById(id);
+				if (el) el.style.display = "";
+			});
+		}
+
+		function titleCaseZh(s) {
+			// 对英文段落保持首字母大写；中文不处理
+			return s.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+		}
+
+		function formatCrumbs(parts) {
+			let html = `<a href="#/">首页</a>`;
+			let acc = "";
+			parts.forEach((p) => {
+				acc += "/" + p;
+				const labelMap = {
+					study: "学习",
+					living: "生活",
+					work: "工作",
+					finance: "财务",
+					government: "政府服务",
+					technology: "科技工具",
+					resources: "资源库",
+					"high-school": "高中",
+					university: "大学",
+					english: "英语课程",
+					"cost-of-living": "生活成本",
+					"student-life": "学生生活",
+					"part-time": "兼职工作",
+					internships: "实习",
+					career: "职业发展",
+					resume: "简历资源",
+					banking: "银行业务",
+					budgeting: "预算管理",
+					taxes: "税务",
+					tools: "工具",
+					"student-visas": "学生签证",
+					mygov: "myGov",
+					tfn: "TFN",
+					medicare: "Medicare",
+					services: "官方渠道",
+					"ai-tools": "AI 工具",
+					productivity: "效率应用",
+					research: "研究工具",
+					platforms: "学习平台",
+					guides: "指南",
+				};
+				const label = labelMap[p] || titleCaseZh(p);
+				html += ` &nbsp;›&nbsp; <a href="#${acc}">${label}</a>`;
+			});
+			return html;
+		}
+
+		function renderResources() {
+			const tbody = document.getElementById("resourceRows");
+			if (!tbody) return;
+			tbody.innerHTML = resources.map(r => {
+				const website = r.website ? `<a href="${r.website}" target="_blank" rel="noopener">访问</a>` : `<span class="tag">添加链接</span>`;
+				return `<tr>
+					<td><strong>${escapeHtml(r.name)}</strong></td>
+					<td><span class="tag">${escapeHtml(r.category)}</span></td>
+					<td>${escapeHtml(r.description)}</td>
+					<td>${website}</td>
+					<td>${escapeHtml(r.recommendedFor)}</td>
+					<td>${escapeHtml(r.difficulty)}</td>
+					<td>${escapeHtml(r.cost)}</td>
+				</tr>`;
+			}).join("");
+
+			const count = document.getElementById("resourceCount");
+			if (count) count.textContent = String(resources.length);
+		}
+
+		function filterResources(q) {
+			q = (q || "").trim().toLowerCase();
+			const rows = document.querySelectorAll("#resourceRows tr");
+			let visible = 0;
+			rows.forEach(row => {
+				const txt = row.textContent.toLowerCase();
+				const ok = !q || txt.includes(q);
+				row.style.display = ok ? "" : "none";
+				if (ok) visible++;
+			});
+			const count = document.getElementById("resourceCount");
+			if (count) count.textContent = String(visible);
+		}
+
+		function escapeHtml(s) {
+			return String(s)
+				.replaceAll("&", "&amp;")
+				.replaceAll("<", "&lt;")
+				.replaceAll(">", "&gt;")
+				.replaceAll('"', "&quot;");
+		}
+
+		function route() {
+			const hash = location.hash || "#/";
+
+			const path = hash.replace(/^#/, "");
+			const parts = path.replace(/^\//, "").split("/").filter(Boolean);
+			setNavCurrent(path);
+
+			if (parts.length === 0) {
+				show("home");
+				return;
+			}
+
+			if (parts[0] === "resources") {
+				show("resources");
+				document.getElementById("breadcrumbs").innerHTML = formatCrumbs(["resources"]);
+				document.getElementById("pageTitle").textContent = "精选资源";
+				document.getElementById("pageLede").textContent = "按分类搜索与浏览学生资源。";
+				renderResources();
+				return;
+			}
+
+			show("subpage");
+			document.getElementById("subBreadcrumbs").innerHTML = formatCrumbs(parts);
+
+			const labelMapLast = {
+				study: "学习",
+				living: "生活",
+				work: "工作",
+				finance: "财务",
+				government: "政府服务",
+				technology: "科技工具",
+				guides: "指南",
+				resources: "资源库",
+				accommodation: "住宿",
+				banking: "银行业务",
+				"part-time": "兼职工作",
+				"student-visas": "学生签证",
+				"ai-tools": "AI 工具",
+			};
+			const key = parts[parts.length - 1];
+			const title = labelMapLast[key] || titleCaseZh(key);
+			document.getElementById("subTitle").textContent = title;
+			document.getElementById("subLede").textContent = "为在澳大利亚生活与学习的学生提供权威风格的指南、资源与信息。";
+
+			const taskMap = {
+				"accommodation": ["比较住宿选项（学生公寓、合租、寄宿等）", "看房与签约前仔细阅读租约条款", "了解基本租赁权利与义务"],
+				"banking": ["选择银行并开立账户", "设置网银/APP 并开启安全验证", "了解费用与国际转账/换汇"],
+				"part-time": ["准备简历与求职材料", "搜索岗位并投递申请", "了解基本工资与工作权益"],
+				"student-visas": ["确认签证条件与限制", "记录关键日期并保存材料", "以官方渠道更新为准"],
+				"ai-tools": ["明确课程政策与 AI 使用边界", "用 AI 做规划与复习，而非代写", "核对事实与引用来源"],
+			};
+
+			const tasks = taskMap[key] || ["查看步骤并准备资料。", "保存重要链接便于后续使用。", "如需帮助，请联系相关服务部门。"];
+			const ul = document.getElementById("subTasks");
+			ul.innerHTML = tasks.map(t => `<li>${escapeHtml(t)}</li>`).join("");
+
+			// Study 页面顶部显示「澳洲教育体系」一级板块（优先于学习资源与 AI 工具）
+			const edu = document.getElementById("studyEduSystem");
+			if (edu) edu.style.display = (key === "study") ? "" : "none";
+
+			// 住宿与租房页面显示「住宿与租房指南」一级板块
+			const housing = document.getElementById("housingGuide");
+			if (housing) housing.style.display = (key === "accommodation") ? "" : "none";
+
+			// 出发前必带清单页面显示「先确定住宿方式，再准备行李」一级板块
+			const bring = document.getElementById("bringByHousing");
+			if (bring) bring.style.display = (key === "new-students") ? "" : "none";
+		}
+
+		function normalizeQuery(q) {
+			return (q || "")
+				.toLowerCase()
+				.replace(/[\s\u3000]+/g, "")
+				.trim();
+		}
+
+		function scoreItem(item, nq) {
+			if (!nq) return 0;
+			const title = normalizeQuery(item.title);
+			const desc = normalizeQuery(item.description);
+			const kw = (item.keywords || []).map(normalizeQuery).join(" ");
+			let score = 0;
+			// Title matches weigh most
+			if (title === nq) score += 100;
+			if (title.includes(nq)) score += 60;
+			// Keyword and description matches
+			if (kw.includes(nq)) score += 35;
+			if (desc.includes(nq)) score += 15;
+			// Small bonus for shorter titles when matching
+			if (score > 0) score += Math.max(0, 8 - Math.min(8, title.length / 6));
+			return score;
+		}
+
+		function renderSearchResults(query, results) {
+			const box = document.getElementById("searchResults");
+			const grid = document.getElementById("searchGrid");
+			const meta = document.getElementById("searchMeta");
+			const title = document.getElementById("searchTitle");
+			if (!box || !grid || !meta || !title) return;
+
+			title.textContent = `搜索：${query}`;
+			grid.innerHTML = "";
+
+			if (!results.length) {
+				meta.innerHTML = `🔍 没有找到相关内容。建议尝试：<strong>PR</strong>、<strong>租房</strong>、<strong>电话卡</strong>、<strong>兼职</strong>、<strong>银行卡</strong>。`;
+				box.classList.add("active");
+				return;
+			}
+
+			meta.textContent = `共找到 ${results.length} 条相关页面（点击查看）。`;
+			results.forEach((item) => {
+				const a = document.createElement("a");
+				a.className = "result-card";
+				a.href = item.url;
+				a.innerHTML = `
+					<h5>${escapeHtml(item.title)}</h5>
+					<p>${escapeHtml(item.description || "")}</p>
+					<div class="view">→ 查看</div>
+				`;
+				grid.appendChild(a);
+			});
+
+			box.classList.add("active");
+		}
+
+		function closeSearchResults() {
+			const box = document.getElementById("searchResults");
+			if (box) box.classList.remove("active");
+		}
+		window.closeSearchResults = closeSearchResults;
+
+		function doSearch(e) {
+			e.preventDefault();
+			const raw = document.getElementById("siteSearch").value || "";
+			const query = raw.trim();
+			const nq = normalizeQuery(query);
+			const index = window.SEARCH_INDEX || [];
+			const scored = index
+				.map((item) => ({ item, score: scoreItem(item, nq) }))
+				.filter((x) => x.score > 0)
+				.sort((a, b) => b.score - a.score)
+				.slice(0, 12)
+				.map((x) => x.item);
+
+			renderSearchResults(query || "（空）", scored);
+			return false;
+		}
+
+		document.getElementById("menuBtn").addEventListener("click", () => {
+			const nav = document.getElementById("primaryNav");
+			const open = nav.classList.toggle("open");
+			document.getElementById("menuBtn").setAttribute("aria-expanded", open ? "true" : "false");
+		});
+
+		window.addEventListener("hashchange", route);
+		window.addEventListener("DOMContentLoaded", () => {
+			renderResources();
+			const rf = document.getElementById("resourceFilter");
+			if (rf) rf.addEventListener("input", (e) => filterResources(e.target.value));
+			route();
+		});
+	</script>
+</body>
+</html>

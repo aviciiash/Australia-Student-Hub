@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>每月生活费参考</title>
+	<meta name="description" content="高中生（寄宿家庭）、大学生（合租）、独居学生：快速估算每月生活预算（含参考区间）。" />
+	<link rel="stylesheet" href="_shared.css" />
+	<style>
+		.data-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+		@media (max-width:980px){.data-grid{grid-template-columns:repeat(2,1fr)}}
+		@media (max-width:640px){.data-grid{grid-template-columns:1fr}}
+		.data-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px;box-shadow:none}
+		.data-card h3{margin:0 0 8px;color:var(--navy);font-size:16px}
+		.data-card p{margin:0;color:var(--muted);line-height:1.6}
+		.kv{margin-top:10px;border-top:1px dashed #d9dee7;padding-top:10px;color:var(--muted);font-size:13.5px}
+		.kv div{margin:6px 0}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<div class="topbar">
+				<div class="brand"><div class="coa" aria-hidden="true">AU</div><div><h1>澳大利亚学生服务中心</h1><p class="subtitle">面向学生的权威风格指南与服务信息</p></div></div>
+				<div class="navwrap">
+					<nav class="primary" aria-label="主导航">
+						<a class="nav-link" href="index.html">首页</a>
+						<a class="nav-link" href="transport-cost.html" aria-current="page">交通与生活成本</a>
+						<a class="nav-link" href="finance-hub.html">银行与财务</a>
+						<a class="nav-link" href="housing-hub.html">住宿与租房</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<section class="section">
+			<div class="container">
+				<div class="breadcrumbs"><a href="index.html">首页</a> &nbsp;›&nbsp; <a href="transport-cost.html">交通与生活成本</a> &nbsp;›&nbsp; <span>每月生活费参考</span></div>
+				<a class="btn" href="transport-cost.html">← 返回概览页</a>
+
+				<div class="page">
+					<h2>💰 每月生活费参考</h2>
+					<p class="lede">目标：帮助你快速估算每月大致预算区间，避免“只看交通费”而忽略住宿与饮食。</p>
+
+					<div class="quick-read">
+						<span class="tag">快速阅读</span>
+						<h3>简短答案</h3>
+						<p>预算差异最大来自<strong>住宿方式</strong>与<strong>饮食习惯</strong>。交通通常不是最大头，但对通勤距离长的人影响会增加。</p>
+						<h3>你只需要知道</h3>
+						<ul>
+							<li>住宿经常占生活成本的 40%–60%。</li>
+							<li>自己做饭 vs 长期外食，差距可能非常明显。</li>
+							<li>未满 18 岁且符合条件的学生，交通成本可能显著降低（政策以官方为准）。</li>
+						</ul>
+					</div>
+
+					<h3 style="margin:18px 0 10px; color: var(--navy);">参考预算（示例）</h3>
+					<div class="data-grid" aria-label="预算卡片">
+						<div class="data-card">
+							<h3>🏫 高中生（寄宿家庭）</h3>
+							<p>更可能包含餐食与管理支持；通勤成本取决于学校距离与政策资格。</p>
+							<div class="kv">
+								<div><strong>寄宿家庭：</strong>AUD $1,680 / 4 周</div>
+								<div><strong>交通：</strong>AUD $0（符合免费公共交通政策情况下）</div>
+								<div><strong>电话卡：</strong>AUD $20–40</div>
+								<div><strong>零花钱：</strong>AUD $100–300</div>
+								<div><strong>参考总支出：</strong>AUD $1,800–2,200 / 月</div>
+								<div style="margin-top:8px;"><em>备注：交通费用按符合免费公共交通政策估算，具体以官方政策为准。</em></div>
+							</div>
+						</div>
+
+						<div class="data-card">
+							<h3>🎓 大学生（合租）</h3>
+							<p>房租与账单更可控，但通勤时间/交通与生活用品需要自行承担。</p>
+							<div class="kv">
+								<div><strong>合租房租（常见区间）：</strong>视地段差异较大</div>
+								<div><strong>饮食：</strong>自己做饭可显著降低成本</div>
+								<div><strong>交通：</strong>取决于通勤距离与频率</div>
+								<div><strong>建议做法：</strong>先定住宿上限，再做每周饮食预算</div>
+							</div>
+						</div>
+
+						<div class="data-card">
+							<h3>🏠 独居学生</h3>
+							<p>舒适度更高，但租金与固定账单通常更高，预算弹性更小。</p>
+							<div class="kv">
+								<div><strong>最大差异：</strong>租金 + 水电网账单</div>
+								<div><strong>可控项：</strong>饮食、购物、娱乐订阅</div>
+								<div><strong>建议：</strong>把“应急金”也纳入预算</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="notice warn" style="margin-top: 18px;">
+						<strong>ℹ️ 注意：</strong>生活成本会因城市、住宿方式和消费习惯而有所不同。本文数据仅供参考，请以实际情况为准。
+					</div>
+				</div>
+
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<div class="container"><h4>Australia Student Hub</h4><p>Information for educational purposes only.</p></div>
+	</footer>
+</body>
+</html>
